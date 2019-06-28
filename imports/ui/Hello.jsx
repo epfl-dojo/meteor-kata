@@ -14,8 +14,8 @@ export default class Hello extends Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.increment()}>Click Me</button>
-        <p>You've pressed the button {this.state.counter} times.</p>
+        <p>Vous avez pressé le bouton {this.state.counter} fois.</p>
+        <button onClick={() => this.increment()}>Cliquez-moi !</button>
       </div>
     );
   }

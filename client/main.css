@@ -2,3 +2,22 @@ body {
   padding: 10px;
   font-family: sans-serif;
 }
+
+table, th, td {
+  border: 1px solid black;
+}
+
+body {
+  padding: 10px;
+  margin: 30px;
+
+  font-family: sans-serif;
+}
+
+a {
+  color: #40b883;
+  text-decoration: none;
+}
+h1, h2 {
+  font-weight: normal;
+}

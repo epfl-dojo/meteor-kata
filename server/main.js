@@ -1,31 +1,36 @@
 import { Meteor } from 'meteor/meteor';
-import Links from '/imports/api/links';
+import Knights from '/imports/api/knights';
 
-function insertLink(title, url) {
-  Links.insert({ title, url, createdAt: new Date() });
+
+function insertKnight(name, quest, favoriteColor, unladenSwallowVelocity) {
+  Knights.insert({ name, quest, favoriteColor, unladenSwallowVelocity });
 }
 
 Meteor.startup(() => {
-  // If the Links collection is empty, add some data.
-  if (Links.find().count() === 0) {
-    insertLink(
-      'Do the Tutorial',
-      'https://www.meteor.com/tutorials/react/creating-an-app'
+  // If the Knights collection is empty, add some data.
+  if (Knights.find().count() === 0) {
+    insertKnight(
+        "Lancelot",
+        "To seek the Holy Grail",
+        "blue"
     );
 
-    insertLink(
-      'Follow the Guide',
-      'http://guide.meteor.com'
+    insertKnight(
+        "Arthur",
+        "To seek the Holy Grail",
+        "green"
     );
 
-    insertLink(
-      'Read the Docs',
-      'https://docs.meteor.com'
-    );
-
-    insertLink(
-      'Discussions',
-      'https://forums.meteor.com'
+    insertKnight(
+        "Galahad",
+        "To seek the Holy Grail",
+        0
     );
   }
-});
+
+  Meteor.methods({
+    removeAllKnights: function () {
+      return Knights.remove({});
+    }
+  });
+})
